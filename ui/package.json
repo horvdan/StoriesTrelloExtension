@@ -10,8 +10,11 @@
   "author": "horvdan",
   "license": "ISC",
   "devDependencies": {
+    "@types/knockout": "^3.4.65",
     "parcel-bundler": "^1.12.3",
     "typescript": "^3.4.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "knockout": "^3.5.0"
+  }
 }
