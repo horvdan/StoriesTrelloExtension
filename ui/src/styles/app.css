@@ -1,7 +1,29 @@
-.red {
-    color: red;
+html {
+  box-sizing: border-box;
 }
 
-.blue {
-    color: blue;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 120px;
+  height: 60px;
+  background-color: fuchsia;
+  margin: 5px;
 }

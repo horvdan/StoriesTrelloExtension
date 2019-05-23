@@ -4,19 +4,16 @@ import ko from 'knockout';
 
 declare var TrelloPowerUp: any;
 
-async function sayHi() {
-    const header = document.querySelector('h1');
-    const template = `<div class="red">Hello from TypeScript</div>`
-    header.insertAdjacentHTML("afterend" ,template);
+async function app() {
+    const storyboard = await getStoryboard();
+
+    const epics = storyboard.epics;
 
     const vm = {
-        koMsg: 'Hello from Knockout'
+        epics
     }
 
     ko.applyBindings(vm);
-
-    const stories = await getStoryboard();
-    console.log(stories);
 }
 
-document.addEventListener('DOMContentLoaded', sayHi, false);
+app();

@@ -9,7 +9,15 @@
     <title>Stories Extension</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <span class="blue" data-bind="text: koMsg"></span>
+    <div class="flex" data-bind="foreach: epics">
+        <div class="flex-column">
+            <div class="card" data-bind="text: name"></div>
+            <div class="flex" data-bind="foreach: steps">
+                    <div class="card">
+                        <span data-bind="text: name"></span>
+                    </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
