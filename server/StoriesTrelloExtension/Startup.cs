@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using StoriesTrelloExtension.Data;
+using StoriesTrelloExtension.Services;
 
 namespace StoriesTrelloExtension
 {
@@ -28,6 +29,7 @@ namespace StoriesTrelloExtension
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddTransient<IStoryboardService, StoryboardService>();
             services.AddDbContext<StoriesContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StoriesDb")));
         }

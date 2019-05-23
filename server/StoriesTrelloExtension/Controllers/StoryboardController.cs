@@ -20,9 +20,9 @@ namespace StoriesTrelloExtension.Controllers
         }
 
         [HttpGet]
-        public ActionResult<StoryboardDTO> Get()
+        public async Task<ActionResult<StoryboardDTO>> Get()
         {
-            return storyboardService.GetStoryboard();
+            return await storyboardService.GetStoryboard();
         }
     }
 }

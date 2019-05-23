@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using StoriesTrelloExtension.Data;
 using StoriesTrelloExtension.DTO;
 
@@ -12,9 +14,15 @@ namespace StoriesTrelloExtension.Services
             this.context = context;
         }
 
-        StoryboardDTO GetStoryboard()
+        public async Task<StoryboardDTO> GetStoryboard()
         {
-            throw new System.NotImplementedException();
+            var epics = await context.Epics
+                .Include(e => e.Steps)
+                    .ThenInclude(s => s.Tasks)
+                    .ThenInclude(t => t.Release)
+               .ToListAsync();
+
+            return new StoryboardDTO(epics);
         }
     }
 }
