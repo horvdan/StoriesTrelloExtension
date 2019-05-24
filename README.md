@@ -11,7 +11,17 @@ Trello PowerUp for rendering a storyboard
 
 Install dependencies:
 * Restore Nuget packages for the .NET solution.
-* Run `npm install` to install the UI dependencies
+* To create to DB, navigate to the `./server/StoriesTrelloExtension` folder and run
+
+```
+dotnet ef database update
+```
+
+* In the `./ui` folder
+
+```
+npm install
+```
 
 Start the project:
 * Start backend server
